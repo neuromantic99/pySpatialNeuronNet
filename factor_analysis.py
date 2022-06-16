@@ -6,8 +6,6 @@ import warnings
 from scipy import stats
 import math
 
-sys.path.append('/Users/danieldaylewis/Documents/code/')
-from Vape.utils import utils_funcs as uf
 
 def indep_gauss_fit(X):
     estim_params = {}
@@ -280,11 +278,6 @@ def example():
 
     simdata = SimulateDataFa(L, Ph, mu)
     X = simdata.simulate(100)
-
-    # test_case_path = '/Users/danieldaylewis/Documents/code/SpatialNeuronNet/fa_Yu/test_case.mat'
-    # lm = uf.LoadMat(test_case_path)
-    # X = lm.dict_['X']
-
     crossvalidate_fa(X, debug=False, show_plots=False)
 
     # Project training data into low-d space (Not necessary for current analysis)
